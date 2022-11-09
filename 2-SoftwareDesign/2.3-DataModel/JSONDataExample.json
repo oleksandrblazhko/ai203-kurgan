@@ -1,0 +1,19 @@
+{
+	"user": {
+		"email": "romanokurg@gmail.com",
+		"password": "kbn2DS48gfG0hm21GA3D"
+	}
+	
+	"category": {
+		"name": "General",
+		"topic": {
+			"author": 0,
+			"name": "New releases",
+			"message": {
+				"sender": 0,
+				"title": "First message",
+				"text": "Test message"
+			}
+		}
+	}
+}

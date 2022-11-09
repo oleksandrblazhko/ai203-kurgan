@@ -1,0 +1,82 @@
+{
+	"description": "Опис предметної області ПП",
+	"type": "object",
+	"properties": {
+		"user": {
+			"description": "Користувач ресурсу",
+			"type": "object",
+			"properties": {
+				"email": {
+					"description": "Електронна пошта",
+					"type": "string"
+				},
+				"password": {
+					"description": "Зашифрований пароль",
+					"type": "string"
+				}
+			},
+			"required": [
+				"email",
+				"password"
+			]
+		},
+
+		"category": {
+			"description": "Категорія, що містить теми",
+			"type": "object",
+			"properties": {
+				"name": {
+					"description": "Назва категорії",
+					"type": "string"
+				},
+				"topic": {
+					"description": "Тема, що містить повідомлення користувачів",
+					"type": "object",
+					"properties": {
+						"name": {
+							"description": "Назва категорії",
+							"type": "string"
+						},
+						"author": {
+							"description": "ID користувача-автора",
+							"type": "integer"
+						},
+						"message": {
+							"description": "Текстові повідомлення користувачів на ресурсі",
+							"type": "object",
+							"properties": {
+								"sender": {
+									"description": "ID користувача-відправника",
+									"type": "integer"
+								},
+								"title": {
+									"description": "Заголовок повідомлення",
+									"type": "string"
+								},
+								"text": {
+									"description": "Зміст повідомлення",
+									"type": "string"
+								}
+							},
+							"required": [
+								"sender",
+								"text"
+							]
+						}
+					},
+					"required": [
+						"name",
+						"author"
+					]
+				}
+			},
+			"required": [
+				"name"
+			]
+		}
+    },
+	"required": [
+		"user",
+		"category"
+	]
+}
