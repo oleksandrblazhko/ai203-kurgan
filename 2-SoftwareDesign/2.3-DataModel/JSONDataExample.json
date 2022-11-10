@@ -1,15 +1,19 @@
 {
 	"user": {
+      	"id": 1,
 		"email": "romanokurg@gmail.com",
 		"password": "kbn2DS48gfG0hm21GA3D"
-	}
+	},
 	
 	"category": {
+      	"id": 1,
 		"name": "General",
 		"topic": {
+          	"id": 1,
 			"author": 0,
 			"name": "New releases",
 			"message": {
+              	"id": 1,
 				"sender": 0,
 				"title": "First message",
 				"text": "Test message"
