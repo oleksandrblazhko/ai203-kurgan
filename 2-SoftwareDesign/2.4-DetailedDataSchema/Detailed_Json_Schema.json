@@ -1,0 +1,131 @@
+{
+	"description": "Опис предметної області ПП",
+	"type": "object",
+	"properties": {
+		"user": {
+			"description": "Користувач ресурсу",
+			"type": "object",
+			"properties": {
+				"id": {
+				   "type": "integer",
+				   "maxLength": 1000,
+				   "pattern": "^[0-9]+$"
+				},
+				"email": {
+					"description": "Електронна пошта",
+					"type": "string",
+					"minLength": 1,
+					"maxLength": 50,
+					"format": "email"
+				},
+				"password": {
+					"description": "Зашифрований пароль",
+					"type": "string",
+					"minLength": 1,
+					"maxLength": 50,
+					"pattern": "^[^\\s]*$"
+				}
+			},
+			"required": [
+				"id",
+				"email",
+				"password"
+			]
+		},
+
+		"category": {
+			"description": "Категорія, що містить теми",
+			"type": "object",
+			"properties": {
+				"id": {
+					"description": "ID категорії",
+					"type": "integer",
+					"maxLength": 1000,
+					"pattern": "^[0-9]+$"
+				},
+				"name": {
+					"description": "Назва категорії",
+					"type": "string",
+					"minLength": 1,
+					"maxLength": 50,
+					"pattern": "^[A-Za-z0-9\\s]+$"
+				},
+				"topic": {
+					"description": "Тема, що містить повідомлення користувачів",
+					"type": "object",
+					"properties": {
+						"id": {
+							"description": "ID теми",
+							"type": "integer",
+							"maxLength": 1000,
+							"pattern": "^[0-9]+$"
+						},
+						"name": {
+							"description": "Назва категорії",
+							"type": "string",
+							"minLength": 1,
+							"maxLength": 50,
+							"pattern": "^[A-Za-z0-9\\s]+$"
+						},
+						"author": {
+							"description": "ID користувача-автора",
+							"type": "integer",
+							"maxLength": 1000,
+							"pattern": "^[0-9]+$"
+						},
+						"message": {
+							"description": "Текстові повідомлення користувачів на ресурсі",
+							"type": "object",
+							"properties": {
+								"id": {
+									"description": "ID повідомлення",
+									"type": "integer",
+									"maxLength": 1000,
+									"pattern": "^[0-9]+$"
+								},
+								"sender": {
+									"description": "ID користувача-відправника",
+									"type": "integer",
+									"maxLength": 1000,
+								    "pattern": "^[0-9]+$"
+								},
+								"title": {
+									"description": "Заголовок повідомлення",
+									"type": "string",
+									"minLength": 1,
+									"maxLength": 50,
+									"pattern": "^[A-Za-z0-9\\s]+$"
+								},
+								"text": {
+									"description": "Зміст повідомлення",
+									"type": "string",
+									"minLength": 1,
+									"maxLength": 50,
+									"pattern": "^[A-Za-z0-9\\s]+$"
+								}
+							},
+							"required": [
+								"id",
+								"sender",
+								"text"
+							]
+						}
+					},
+					"required": [
+						"id",
+						"name",
+						"author"
+					]
+				}
+			},
+			"required": [
+				"id",
+				"name"
+			]
+		}
+    },
+	"required": [
+		"user",
+		"category"
+	]
+}
