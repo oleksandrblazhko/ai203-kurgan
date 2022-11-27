@@ -1,3 +1,6 @@
+@startjson
+
+title JSON Data
 {
 	"user": {
       	"id": 1,
@@ -21,3 +24,4 @@
 		}
 	}
 }
+@endjson

@@ -1,0 +1,16 @@
+@startuml
+title Usecase for Information system
+left to right direction
+skinparam packageStyle rect
+
+actor User
+actor Moderator
+
+rectangle {
+  User --> (Send message)
+  User --> (Edit message)
+  Moderator --> (Delete message)
+  (Edit message) ..> (Send message) : <<include>>
+  (Delete message) ..> (Send message) : <<include>>
+}
+@enduml

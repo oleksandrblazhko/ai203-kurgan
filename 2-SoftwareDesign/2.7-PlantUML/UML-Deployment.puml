@@ -1,0 +1,18 @@
+@startuml
+title Deployment for Information System
+left to right direction
+
+node "<<Desktop computer>>" as dc {
+  node "<<OS Windows>>" {
+    node "<<Web navigator>>" {
+      component [.js (React)]
+    }
+  }
+}
+
+interface Mouse
+interface Keyboard
+
+Mouse-- dc
+Keyboard -- dc
+@enduml
