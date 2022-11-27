@@ -1,0 +1,16 @@
+@startuml
+title Activity Diagram 
+
+start
+
+:User sends a message; 
+:Moderator views the message;
+
+if (Is message inappropriate?) then (yes)
+  :Moderator removes the message;
+else (no)
+  :No action;
+endif
+
+stop
+@enduml

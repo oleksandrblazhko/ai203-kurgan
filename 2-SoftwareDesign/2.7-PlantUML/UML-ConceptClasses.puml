@@ -1,0 +1,23 @@
+@startuml
+title Concept of Classes Diagram 
+
+Class Category
+Class Topic
+Class Message
+Class User
+Class Moderator
+Class Administrator
+
+User"1" <|-- "1"Moderator
+Moderator"1" <|-- "1"Administrator
+
+Category"*" *-- "1"Topic
+Topic"*" *-- "1"Message
+
+User"1" --> "0...*"Message : sends, edits
+User"1" --> "0...*"Topic : creates
+Moderator"1" --> "0...*"Message : deletes
+Moderator"1" --> "0...*"Topic : deletes
+Administrator"1" --> "0...*"Category : creates, edits, deletes
+
+@enduml
